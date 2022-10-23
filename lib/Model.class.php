@@ -1,32 +1,30 @@
 <?php
 
-class Model{
+include "DBOperations.class.php";
 
-    private $database;
-    private $email;
-    private $passsword;
+//Faz as operações do Model com a herança da DBOperations.
 
+class Model extends DBOperations{
+
+    //Nesse bloco,além de iniciar o construtor dessa classe também inicia o da classe pai.
     public function __construct($database,$email,$password){
+
+        //Inicialização da classe pai.
+        parent::__construct($database,$email,$password);
+
         $this->database = $database;
         $this->email = $email;
         $this->password = $password;
     }
 
+    //Verificação de login.
     public function verifyLogin($table){
-        return $this->getAutentication($table);
+        return $this->getLoginAutentication($table);
     }
 
-    private function getAutentication($table){
-        $cmd = "SELECT * FROM $table";
-        $query = $this->database->query($cmd);
-        $signed = False;
-
-        foreach($query as $key){
-            if($key['email'] == $this->email && $key['senha'] == $this->password){
-                $signed = True;
-            }
-        }
-        return $signed;
+    //Retorna uma informação do banco
+    public function getUsername(){
+        return $this->selectWhere('usuário','nomeUsuário','email',$this->email);
     }
 }
 
