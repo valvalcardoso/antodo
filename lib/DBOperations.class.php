@@ -39,8 +39,19 @@ class DBOperations{
         return $query;
     }
 
-    protected function selectWhere($table,$column,$referenceColumn,$referenceData){
+    public function selectWhere($table,$column,$referenceColumn,$referenceData){
         $cmd = "SELECT $column FROM $table WHERE $referenceColumn = '$referenceData'";
+        $query = $this->database->query($cmd);
+        $data = [];
+        foreach($query as $key){
+            array_push($data,$key);
+        }
+
+        return $data;
+    }
+
+    protected function getId(){
+        $cmd = "SELECT idUsuário FROM usuário WHERE email = '$this->email'";
         $query = $this->database->query($cmd);
         $data = null;
         foreach($query as $key){

@@ -11,15 +11,17 @@ class AjaxController{
         $this->noRequires = false;
 
         //Requisição para pegar o nome de usuário.
-        if(isset($_POST['nomeUsuário'])){
-            $_SESSION['dataRequire'] = $_POST['nomeUsuário'];
+        if(isset($_POST['RequestData'])){
+            $_SESSION['dataRequire'] = $_POST['RequestData'];
             $this->getQuery();
         }
 
         //Requisição que verifica se tem algum dado do banco.
         elseif(isset($_SESSION['backData'])){
-            $this->sendMsg($_SESSION['backData']);
+            $backData = $_SESSION['backData'];
             unset($_SESSION['backData']);
+            $this->sendMsg($backData);
+            
         }
 
         else{

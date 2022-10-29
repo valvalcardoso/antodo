@@ -22,9 +22,18 @@ class Model extends DBOperations{
         return $this->getLoginAutentication($table);
     }
 
-    //Retorna uma informação do banco
+    //Retorna o nome de usuário
     public function getUsername(){
-        return $this->selectWhere('usuário','nomeUsuário','email',$this->email);
+        return $this->selectWhere('usuário','nomeUsuário','email',$this->email)[0][0];
+    }
+
+    //Retorna todos os dados de um campo relacionado ao usuário
+    public function getAllUserTablesData($arrayTables){
+        $data = [];
+        foreach($arrayTables as $table){
+            $data["$table"] = $this->selectWhere("$table",'*','idusuário',$this->getId());
+        }
+        return $data;
     }
 }
 
