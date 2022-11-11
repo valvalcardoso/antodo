@@ -1,10 +1,14 @@
 import Home from '../lib/Home.class.js';
 
 let tables = {}
+
 let username = document.getElementById('username');
 let mainSections = document.getElementsByClassName('func-section');
 let navBarList = document.getElementsByClassName('list-item');
 let projects = document.getElementsByClassName('box-project');
+let boxProjectsSection = document.getElementById('T.Projetos')
+let tpItem = document.getElementById('tp-item');
+
 
 tables['Cronograma Semanal'] = {
     'id':'cs-table',
@@ -20,7 +24,7 @@ tables['Cronograma Semanal'] = {
     'referenceDatabase':'tarefa'
 };
 
-tables['Atvidades-Projetos'] = {
+tables['Atividades-Projetos'] = {
     'id':'tp-table',
     'objectCamp': {
         'Fazer': 0,
@@ -39,9 +43,6 @@ let home = new Home(username,tables,url);
 
 home.chooseSection(mainSections,navBarList);
 
-projects[0].addEventListener('click',event => {
-    let projectTable = document.getElementById('Atividades-Projetos');
-    projectTable.style.display = 'block';
-    projects[0].style.display = 'none';
+tpItem.addEventListener('click',event => {
+    home.setProjectSection(projects,boxProjectsSection);
 })
-
