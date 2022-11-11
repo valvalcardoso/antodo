@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'main-font';
+    src: url('DMSans-Regular.ttf') format('truetype');
+}
+
+body{
+    margin: 0;
+    height: 100%;
+    font-family: 'main-font',sans-serif;
+    background-color: #f4ddff;
+}
+
+.nav-section{
+    width:20%;
+    height: 100%;
+    position: absolute;
+}
+
+.navbar{
+    width: 100%;
+    height: 100%;
+    background-color:#2E0F3B;
+    color:white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: block;
+}
+
+.list-section{
+    width: 100%;
+    height: 50%;
+    position: sticky;
+    display: block;
+    top:40%;
+}
+
+.list{
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 15pt;
+    margin-bottom: 10%;
+}
+
+.list-item{
+    padding: 10% 10%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: 0.2s;
+}
+
+.list-item:hover{
+    background-color: rgba(255,255,255,0.2);
+}
+
+.user-data{
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    font-size:15pt;
+    position: sticky;
+    font-weight: bold;
+    top: 5%;
+}
+
+.div-user-img{
+    position: sticky;
+    left: 6.5%;
+    width: 35%;
+}
+
+.user-img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.edit-button{
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right,#5a266e,#cb7fe9);
+    width: 65%;
+    height: 12%;
+    border-radius: 5px;
+    color:white;
+    font-size: 12pt;
+}

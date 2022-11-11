@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'main-font';
+    src: url('DMSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style:normal;
+}
+
+
+body {
+    font-family: 'main-font',monospace;
+    background-image:linear-gradient(to left,#DEDAF4,#D0C5F4);
+}
+
+.container{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top:5%;
+    background-color:white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+}
+
+.wall{
+    width: 30%;
+    min-height: 100%;
+    background-color: #391248;
+    color: #391248;
+    margin-bottom:0px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+
+.box-form{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    height: 70%;
+    top: 15%;
+    margin-left: 10%;
+    border-radius: 10px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+}
+
+.form{
+    font-size: 20pt;
+    position: absolute;
+    margin-top: 0px;
+    width: 40%;
+    left: 40%;
+    top:5%;
+    text-align: left;
+    padding: 20px 20px;
+}
+
+.input-field{
+    font-family: 'main-font',sans-serif;
+    font-size: 12pt;
+    border: none;
+    width: 97.5%;
+    height: 30px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid rgba(154, 140, 131, 0.5);
+    transition: 0.2s;
+}
+
+.input-field:valid,.input-field:focus{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgba(154, 140, 131, 1);
+}
+
+.action-button{
+    font-family: 'main-font',sans-serif;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    background-color: #391248;
+    color: white;
+    font-weight: bold;
+    box-shadow:1px 2px 5px 0 rgba(0,0,0,.2);
+    margin-top: 10%;
+}
+
+
+.about-box{
+    color:white;
+    width: 100%;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+.ant{
+    width: 40%;
+    transform: scaleX(-1);
+}
+
+.user-img{
+    width: 200px;
+}
+
