@@ -13,12 +13,16 @@ if(isset($_SESSION['dataRequire'])){
 
     $data = $model->getAllUserTablesData($tables['user']);
 
+    $cont = 0;
+
     foreach($data['projeto'] as $projeto){
-        $data['atividade'] = $model->selectWhere(
+        $data['atividade'][$cont] = $model->selectWhere(
             'atividade',
             '*',
             'idProjeto',
             $projeto['idProjeto']);
+
+        $cont += 1;
     }
     
     $_SESSION['backData'] = $data;
