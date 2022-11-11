@@ -14,37 +14,39 @@ $home = new HomeView();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style/home-style-01.css">
+    <link rel="stylesheet" href="../style/home-style-02.css">
 </head>
 <body>
     <section class="nav-section">
         <nav class="navbar">
             <section class="user-data">
                 <div class="div-user-img">
-                    <img class="user-img">
+                    <img src="../media/girl.png" class="user-img">
                 </div>
                 <div class="div-username">
                     <p class="username" id="username">Usuário</p>
                 </div>
+                <button class="edit-button">Editar</button>
             </section>
             <section class="list-section">
                 <ul class="list">
-                    <li class="list-item">Cronograma Semanal</li>
-                    <li class="list-item">Tarefas de Projetos</li>
-                    <li class="list-item">Gerenciador Financeiro</li>
+                    <li class="list-item">C.Semanal</li>
+                    <li class="list-item" id='tp-item'>T.Projetos</li>
+                    <li class="list-item">G.Financeiro</li>
                     <li class="list-item">Sobre</li>
-                    <li class="list-item">Feedback</li>
+                    <li class="list-item" style="border-bottom:0;">Feedback</li>
                 </ul>
             </section>
         </nav>
     </section>
 
-    <main>
-        <section style="display:block;" id="Sobre" class="func-section">
+    <main class="main-content">
+        <section id="Sobre" class="func-section">
             <div class="about">
-                <div class="tittle-div">
-                    <img class="ant-img">
-                    <br>
-                    <h1 class="tittle">Antodo</h1>
+                <div class="about-div">
+                    <img src="../media/ant.png" class="ant-img">
+                    <h1 class="title">Antodo</h1>
                     <br>
                     <p class="text">
                         No decorrer dos dias as pessoas acabam não
@@ -63,7 +65,7 @@ $home = new HomeView();
             </div>
         </section>
 
-        <section style="display:none;" id="Cronograma Semanal" class="func-section">
+        <section style="display:none;" id="C.Semanal" class="func-section">
             <table id="cs-table" class="table">
                 <thead class="t-head">
                     <tr class="t-row">
@@ -83,11 +85,12 @@ $home = new HomeView();
                     <tr class="t-row"></tr>
                     <tr class="t-row"></tr>
                     <tr class="t-row"></tr>
+                    <tr class="t-row"></tr>
                 </tbody>
             </table>
         </section>
 
-        <section style="display:none;" id="Tarefas de Projetos" class="func-section">
+        <section style="display:none;" id="T.Projetos" class="func-section">
             <h1 class="tittle">Projetos</h1>
             <div>
                 <div class="box-project">
@@ -126,7 +129,7 @@ $home = new HomeView();
             </table>
         </section>
 
-        <section style="display:none;" id="Gerenciador Financeiro" class="func-section">
+        <section style="display:none;" id="G.Financeiro" class="func-section">
             <div class="money">
                 <div class="box-money">
                     <p>Contas</p>
